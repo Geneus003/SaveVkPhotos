@@ -2,7 +2,7 @@ import vk_api
 
 
 def main():
-    login, password = '8983########', '########'
+    login, password = '######', '#######'
 
     vk_session = vk_api.VkApi(login, password)
 
@@ -56,7 +56,7 @@ main()
 
 
 def mar():
-    login, password = '8########', '#########'
+    login, password = '######', '#######'
 
     vk_session = vk_api.VkApi(login, password)
 
@@ -92,3 +92,37 @@ def mar():
 
 
 mar()
+
+
+def alb():
+    login, password = '######', '#######'
+
+    vk_session = vk_api.VkApi(login, password)
+
+    try:
+        vk_session.auth()
+    except vk_api.AuthError as error_msg:
+        print(error_msg)
+        return
+
+    vk = vk_session.get_api()
+
+    sav = vk.photos.get(owner_id=294317477, album_id="saved")
+
+    sav = sav["items"]
+
+    for i in range(len(sav)):
+        ph = ["photo_75", "photo_130", "photo_604", "photo_807", "photo_1280", "photo_2560"]
+        f_name = "savedd/saved.txt"
+        if len(sav) == 0:
+            continue
+        for g in range(len(ph)):
+            try:
+                f = open(f_name, "a")
+                print(sav[i][ph[g]], file=f)
+
+            except KeyError:
+                break
+
+
+alb()
