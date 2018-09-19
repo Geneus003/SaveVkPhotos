@@ -1,2 +1,2 @@
 # SaveVkPhotos
-For saving messages and photos(about 70% complite)
+For saving messages and photos(about 100% complite)
