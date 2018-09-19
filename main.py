@@ -56,7 +56,7 @@ main()
 
 
 def mar():
-    login, password = '89832095427', 'MISHA2013misha'
+    login, password = '8########', '#########'
 
     vk_session = vk_api.VkApi(login, password)
 
@@ -89,9 +89,6 @@ def mar():
 
                 except KeyError:
                     break
-
-
-
 
 
 mar()
